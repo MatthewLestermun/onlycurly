@@ -75,3 +75,20 @@ function renderResult() {
 
 function start() { step = 0; score = {}; renderStep(); openModal(); }
 document.querySelectorAll('[data-quiz]').forEach((b) => b.addEventListener('click', start));
+
+// ---------- Ползунок «до / после» ----------
+const range = $('#ba-range');
+function setSplit(v) {
+  $('#ba-clip').style.clipPath = `inset(0 ${100 - v}% 0 0)`;
+  $('#ba-handle').style.left = v + '%';
+}
+range.addEventListener('input', () => setSplit(range.value));
+
+document.querySelectorAll('#ba-thumbs button').forEach((b) => b.addEventListener('click', () => {
+  const p = b.dataset.pair;
+  $('#ba-before').src = `img/client/${p}-before.jpg`;
+  $('#ba-after').src = `img/client/${p}-after.jpg`;
+  document.querySelectorAll('#ba-thumbs button').forEach((x) => x.classList.toggle('active', x === b));
+  range.value = 50;
+  setSplit(50);
+}));
