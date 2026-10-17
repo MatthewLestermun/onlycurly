@@ -24,8 +24,8 @@ em { font-style: normal; color: inherit; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; font-weight: 600; transition: transform .2s, background .2s; }
 .btn span { transition: transform .2s; }
 .btn:hover span { transform: translateX(4px); }
-.btn--dark { background: var(--ink); color: var(--white); }
-.btn--dark:hover { background: #3a3331; }
+.btn--dark { background: var(--btn-bg, var(--ink)); color: var(--btn-fg, var(--white)); }
+.btn--dark:hover { filter: brightness(1.15); }
 .btn--ghost { border: 1.5px solid var(--ink); }
 .btn--ghost:hover { background: var(--ink); color: var(--white); }
 .btn--sm { height: 44px; padding: 0 22px; font-size: 14px; }
@@ -42,7 +42,7 @@ em { font-style: normal; color: inherit; }
 .worlds { display: flex; gap: 4px; margin-left: auto; padding: 5px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); }
 .worlds a { padding: 8px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--muted); transition: .2s; }
 .worlds a:hover { color: var(--ink); }
-.worlds a.active { background: var(--powder); color: var(--ink); }
+.worlds a.active { background: var(--btn-bg, var(--powder)); color: var(--btn-fg, var(--ink)); }
 
 /* Первый экран */
 .hero { position: relative; padding: 36px 0 80px; overflow: hidden; }
@@ -62,7 +62,7 @@ em { font-style: normal; color: inherit; }
 .types__row { display: flex; gap: 8px; flex-wrap: wrap; }
 .types__row button { padding: 10px 18px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--white); font-size: 14px; font-weight: 600; transition: .2s; }
 .types__row button:hover { border-color: var(--ink); }
-.types__row button.active { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.types__row button.active { background: var(--btn-bg, var(--ink)); border-color: var(--btn-bg, var(--ink)); color: var(--btn-fg, var(--white)); }
 
 .hero__media { position: relative; height: 640px; }
 .arch { position: absolute; right: 20px; top: 0; width: 64%; height: 92%; border-radius: 999px 999px 28px 28px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(29, 26, 25, .5); background: var(--powder); }
@@ -121,17 +121,33 @@ em { font-style: normal; color: inherit; }
   .curl-line path { stroke-dashoffset: 0; }
 }
 
-/* ===== Палитры (переключатель для выбора; по подборкам для салонов) ===== */
-[data-theme="lux"] { --bg: #FAFAFA; --powder: #E8C4C4; --ink: #111111; --muted: #6A6A6A; --accent: #D4AF37; --white: #FFFFFF; --line: #E6E2E2; --header: rgba(250, 250, 250, .9); }
-[data-theme="natural"] { --bg: #F5F0E8; --powder: #D4C5B9; --ink: #2E2A24; --muted: #756D63; --accent: #9CAF88; --white: #FCFAF6; --line: #E2D9CD; --header: rgba(245, 240, 232, .9); }
-[data-theme="taupe"] { --bg: #EDE3D1; --powder: #DCCFB8; --ink: #2A2A2A; --muted: #6E665A; --accent: #2A2A2A; --white: #F7F1E6; --line: #D8CBB5; --header: rgba(237, 227, 209, .9); }
+/* ===== Палитры: смелые сочетания для выбора ===== */
+body, .header, .worlds, .types__row button, .review-card, .modal__box { transition: background-color .4s, color .4s, border-color .4s; }
+.arch { background: var(--powder); }
+
+/* Шоколад и малина */
+[data-theme="raspberry"] { --bg: #2A1A16; --powder: #3E2621; --ink: #F8ECE3; --muted: #C7AFA4; --accent: #E2457C; --white: #352219; --line: #4A3029; --header: rgba(42, 26, 22, .9); --btn-bg: #E2457C; --btn-fg: #fff; }
+/* Лаванда и баклажан */
+[data-theme="lavender"] { --bg: #E6DEF6; --powder: #CFC1F0; --ink: #2A1F45; --muted: #5E5480; --accent: #6E4FD8; --white: #F6F2FE; --line: #D2C7EE; --header: rgba(230, 222, 246, .9); --btn-bg: #2A1F45; --btn-fg: #F6F2FE; }
+/* Оливка и горчица */
+[data-theme="olive"] { --bg: #36412A; --powder: #4A5838; --ink: #F3EDD3; --muted: #C6C2A2; --accent: #E6B83A; --white: #414E33; --line: #56643F; --header: rgba(54, 65, 42, .9); --btn-bg: #E6B83A; --btn-fg: #26301C; }
+/* Персик и кобальт */
+[data-theme="peach"] { --bg: #FFD8C2; --powder: #FFBE9C; --ink: #1B2A6E; --muted: #4B5794; --accent: #1B2A6E; --white: #FFF0E7; --line: #F6BFA2; --header: rgba(255, 216, 194, .9); --btn-bg: #1B2A6E; --btn-fg: #FFF0E7; }
+/* Мята и вишня */
+[data-theme="mint"] { --bg: #D2EADF; --powder: #B2DAC9; --ink: #4B1022; --muted: #7A4252; --accent: #A3123A; --white: #F0F9F4; --line: #B9DCCD; --header: rgba(210, 234, 223, .9); --btn-bg: #A3123A; --btn-fg: #F0F9F4; }
+
+[data-theme="raspberry"] .logo img, [data-theme="olive"] .logo img, [data-theme="raspberry"] .seal, [data-theme="olive"] .seal { filter: invert(1); }
+[data-theme="raspberry"] .btn--ghost, [data-theme="olive"] .btn--ghost { border-color: var(--ink); }
 
 .palette { position: fixed; right: 18px; bottom: 18px; z-index: 40; display: flex; align-items: center; gap: 8px; padding: 8px 10px 8px 14px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .35); font-size: 12px; font-weight: 700; color: var(--muted); }
 .palette button { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--white); box-shadow: 0 0 0 1px var(--line); cursor: pointer; transition: transform .2s; }
 .palette button:hover { transform: scale(1.12); }
 .palette button.active { box-shadow: 0 0 0 2px var(--ink); }
 .sw-nude { background: linear-gradient(135deg, #F1EDE6 50%, #3A2D28 50%); }
-.sw-lux { background: linear-gradient(135deg, #E8C4C4 50%, #111111 50%); }
-.sw-natural { background: linear-gradient(135deg, #F5F0E8 50%, #9CAF88 50%); }
-.sw-taupe { background: linear-gradient(135deg, #EDE3D1 50%, #2A2A2A 50%); }
+.sw-raspberry { background: linear-gradient(135deg, #2A1A16 50%, #E2457C 50%); }
+.sw-lavender { background: linear-gradient(135deg, #E6DEF6 50%, #2A1F45 50%); }
+.sw-olive { background: linear-gradient(135deg, #36412A 50%, #E6B83A 50%); }
+.sw-peach { background: linear-gradient(135deg, #FFD8C2 50%, #1B2A6E 50%); }
+.sw-mint { background: linear-gradient(135deg, #D2EADF 50%, #A3123A 50%); }
 .video-card span { color: #1D1A19; }
+@media (max-width: 600px) { .palette span { display: none; } .palette { gap: 6px; padding: 6px; } .palette button { width: 24px; height: 24px; } }
