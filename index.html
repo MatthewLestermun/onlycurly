@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; base-uri 'none'; form-action 'none'">
+  <title>Only Curly — студия для кудрявых волос во Владивостоке</title>
+  <meta name="description" content="Only Curly — первая студия для кудрявых и вьющихся волос на Дальнем Востоке. Сухая стрижка по технике DEVACUT, СПА-ритуалы и обучение уходу. Онлайн-запись.">
+  <link rel="icon" href="img/client/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__in">
+      <a href="#top" class="logo"><img src="img/client/logo.png" alt="Логотип Only Curly"><span>Only Curly<small>Владивосток</small></span></a>
+      <nav class="worlds" aria-label="Направления">
+        <a href="#top" class="active">Стрижки и уход</a>
+        <a href="#club">Банда кудрявых</a>
+        <a href="#venera">Венера</a>
+        <a href="#logovo">Логово</a>
+      </nav>
+      <a class="btn btn--dark btn--sm" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Записаться</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <span class="swirl swirl--1" aria-hidden="true"></span>
+      <span class="swirl swirl--2" aria-hidden="true"></span>
+      <div class="container hero__in">
+        <div class="hero__text">
+          <p class="kicker">Первая студия для кудрявых на Дальнем Востоке</p>
+          <h1>Кудри, которые хочется носить <em>распущенными</em></h1>
+          <p class="lead">Сухая стрижка по технике DEVACUT, СПА-ритуалы и обучение домашнему уходу. Забудьте о пухе, сухости и выпрямлении.</p>
+          <div class="hero__row">
+            <a class="btn btn--dark" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Записаться онлайн <span>→</span></a>
+            <button class="btn btn--ghost" type="button" data-quiz>Какой у меня тип кудрей?</button>
+          </div>
+          <ul class="trust">
+            <li><b>5,0 ★</b><span>99 оценок в Dikidi</span></li>
+            <li><b>1 600+</b><span>в «Банде кудрявых»</span></li>
+            <li><b>DEVACUT</b><span>техника из США</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__media">
+          <div class="arch"><img src="img/client/portrait-short.jpg" alt="Клиентка Only Curly с короткими кудрями"></div>
+          <div class="video-card">
+            <video src="video/process-full.mp4" autoplay muted loop playsinline preload="metadata" poster="img/client/spa-wash.jpg"></video>
+            <span>Как проходит визит</span>
+          </div>
+          <div class="ba-card">
+            <div class="ba-card__pics"><img src="img/client/f-before.jpg" alt="До"><img src="img/client/f-after.jpg" alt="После"></div>
+            <small>до → после</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="quiz" aria-hidden="true">
+    <div class="modal__box">
+      <button class="modal__close" type="button" data-close aria-label="Закрыть">×</button>
+      <div class="quiz__bar"><i id="quiz-bar"></i></div>
+      <div id="quiz-body"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
