@@ -1,18 +1,37 @@
 // =====================================================
-// main.js — тест «Какой у меня тип кудрей?»
+// main.js — переключатель типа кудрей и тест «Какой у меня тип кудрей?»
 // =====================================================
 
 const $ = (s) => document.querySelector(s);
 const DIKIDI = 'https://dikidi.app/onlycurly';
 
-// ---------- Окно ----------
+// ---------- Переключатель на первом экране: фото работы под выбранный тип ----------
+const TYPES = {
+  curly: { img: 'img/client/portrait-short.jpg', note: 'Так выглядят кудри после сухой стрижки DEVACUT' },
+  wavy: { img: 'img/client/b-after.jpg', note: 'Волна держит форму, а не распрямляется к обеду' },
+  coily: { img: 'img/client/a-after.jpg', note: 'Мелкие кольца — упругие и без пуха' }
+};
+const typeImg = $('#type-img');
+document.querySelectorAll('#types button').forEach((b) => b.addEventListener('click', () => {
+  const t = TYPES[b.dataset.type];
+  document.querySelectorAll('#types button').forEach((x) => x.classList.toggle('active', x === b));
+  typeImg.classList.add('swap');
+  setTimeout(() => {
+    typeImg.src = t.img;
+    $('#type-note').textContent = t.note;
+    typeImg.classList.remove('swap');
+  }, 300);
+}));
+Object.values(TYPES).forEach((t) => { new Image().src = t.img; });
+
+// ---------- Окно теста ----------
 const quiz = $('#quiz');
 function openModal() { quiz.classList.add('open'); quiz.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
 function closeModal() { quiz.classList.remove('open'); quiz.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
 quiz.addEventListener('click', (e) => { if (e.target === quiz || e.target.closest('[data-close]')) closeModal(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-// ---------- Вопросы: каждый ответ даёт балл одному типу ----------
+// Каждый ответ даёт балл одному типу
 const QUESTIONS = [
   { q: 'Как выглядят волосы, если высушить их без фена и укладки?', opts: [
     ['Лёгкие волны, местами почти прямые', 'буква S, у корней прямые', 'wavy'],
@@ -75,20 +94,3 @@ function renderResult() {
 
 function start() { step = 0; score = {}; renderStep(); openModal(); }
 document.querySelectorAll('[data-quiz]').forEach((b) => b.addEventListener('click', start));
-
-// ---------- Ползунок «до / после» ----------
-const range = $('#ba-range');
-function setSplit(v) {
-  $('#ba-clip').style.clipPath = `inset(0 ${100 - v}% 0 0)`;
-  $('#ba-handle').style.left = v + '%';
-}
-range.addEventListener('input', () => setSplit(range.value));
-
-document.querySelectorAll('#ba-thumbs button').forEach((b) => b.addEventListener('click', () => {
-  const p = b.dataset.pair;
-  $('#ba-before').src = `img/client/${p}-before.jpg`;
-  $('#ba-after').src = `img/client/${p}-after.jpg`;
-  document.querySelectorAll('#ba-thumbs button').forEach((x) => x.classList.toggle('active', x === b));
-  range.value = 50;
-  setSplit(50);
-}));

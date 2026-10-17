@@ -9,77 +9,65 @@
   <link rel="icon" href="img/client/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="header">
-    <a href="#top" class="logo"><img src="img/client/logo.png" alt="Логотип Only Curly"></a>
-    <nav class="worlds" aria-label="Направления">
-      <a href="#top" class="active">Стрижки и уход</a>
-      <a href="#club">Банда кудрявых</a>
-      <a href="#venera">Венера</a>
-      <a href="#logovo">Логово</a>
-    </nav>
-    <a class="btn btn--copper" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Записаться</a>
+    <div class="container header__in">
+      <a href="#top" class="logo"><img src="img/client/logo.png" alt="Логотип Only Curly"><span>Only Curly<small>Владивосток</small></span></a>
+      <nav class="worlds" aria-label="Направления">
+        <a href="#top" class="active">Стрижки и уход</a>
+        <a href="#club">Банда кудрявых</a>
+        <a href="#venera">Венера</a>
+        <a href="#logovo">Логово</a>
+      </nav>
+      <a class="btn btn--dark btn--sm" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Записаться</a>
+    </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero__text">
-        <p class="tag">Владивосток · с любовью к кудрям</p>
-        <h1><span>Только</span><span class="h1-copper">кудри.</span></h1>
-        <p class="lead">Пух — это не характер ваших волос. Это сухость, неправильная стрижка и годы с утюжком. Мы стрижём по сухим кудрям, видя каждый локон, и учим ухаживать за ними дома.</p>
-        <div class="hero__row">
-          <a class="btn btn--copper btn--big" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Записаться в Dikidi →</a>
-          <button class="link-btn" type="button" data-quiz>Узнать свой тип кудрей</button>
+      <div class="container hero__in">
+        <div class="hero__text">
+          <p class="kicker">Первая студия для кудрявых на Дальнем Востоке</p>
+          <h1>Кудри, которые хочется носить
+            <span class="curl-word"><em>распущенными</em>
+              <svg class="curl-line" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><path d="M4 40 C 60 40, 90 12, 130 22 C 160 30, 150 56, 128 50 C 106 44, 122 14, 160 18 C 210 24, 230 44, 280 36 C 320 30, 350 22, 396 26"/></svg>
+            </span>
+          </h1>
+          <p class="lead">Сухая стрижка по технике DEVACUT, СПА-ритуалы и обучение домашнему уходу. Забудьте о пухе, сухости и выпрямлении.</p>
+          <div class="hero__row">
+            <a class="btn btn--dark" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Записаться онлайн <span>→</span></a>
+            <button class="btn btn--ghost" type="button" data-quiz>Пройти тест на тип кудрей</button>
+          </div>
+
+          <div class="types">
+            <p>Какие кудри у вас? <span class="hand">нажмите ↓</span></p>
+            <div class="types__row" id="types">
+              <button type="button" class="active" data-type="curly">Кудрявые</button>
+              <button type="button" data-type="wavy">Волнистые</button>
+              <button type="button" data-type="coily">Мелкие кольца</button>
+            </div>
+          </div>
         </div>
-        <dl class="facts">
-          <div><dt>5,0</dt><dd>99 оценок</dd></div>
-          <div><dt>1 600+</dt><dd>в «Банде кудрявых»</dd></div>
-          <div><dt>DEVACUT</dt><dd>сухая стрижка</dd></div>
-        </dl>
-      </div>
 
-      <div class="hero__mosaic">
-        <figure class="m m--1"><img src="img/client/f-after.jpg" alt="Медные кудри после стрижки"></figure>
-        <figure class="m m--2"><img src="img/client/portrait-short.jpg" alt="Короткие кудри"></figure>
-        <figure class="m m--3"><img src="img/client/a-after.jpg" alt="Тёмные упругие кольца"></figure>
-        <img class="seal" src="img/client/logo.png" alt="">
-      </div>
-    </section>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker__track">
-        <span>сухая стрижка DEVACUT</span><i>@</i><span>СПА-ритуалы</span><i>@</i><span>без сульфатов и силиконов</span><i>@</i><span>обучение кудрявому методу</span><i>@</i>
-        <span>сухая стрижка DEVACUT</span><i>@</i><span>СПА-ритуалы</span><i>@</i><span>без сульфатов и силиконов</span><i>@</i><span>обучение кудрявому методу</span><i>@</i>
-      </div>
-    </div>
-
-    <!-- До / после -->
-    <section class="ba">
-      <div class="ba__head">
-        <h2>Потяните<br>и посмотрите</h2>
-        <p>Это не фильтры и не стоковые фото. Это наши гостьи до визита и через пару часов после.</p>
-      </div>
-      <div class="ba__wrap">
-        <div class="compare" id="compare">
-          <img class="compare__after" id="ba-after" src="img/client/f-after.jpg" alt="После">
-          <div class="compare__before" id="ba-clip"><img id="ba-before" src="img/client/f-before.jpg" alt="До"></div>
-          <span class="compare__label compare__label--l">до</span>
-          <span class="compare__label compare__label--r">после</span>
-          <div class="compare__handle" id="ba-handle"><span>↔</span></div>
-          <input class="compare__range" id="ba-range" type="range" min="0" max="100" value="50" aria-label="Сравнить до и после">
-        </div>
-        <div class="ba__thumbs" id="ba-thumbs">
-          <button class="active" type="button" data-pair="f"><img src="img/client/f-after.jpg" alt="Пара 1"></button>
-          <button type="button" data-pair="a"><img src="img/client/a-after.jpg" alt="Пара 2"></button>
-          <button type="button" data-pair="b"><img src="img/client/b-after.jpg" alt="Пара 3"></button>
-          <button type="button" data-pair="g"><img src="img/client/g-after.jpg" alt="Пара 4"></button>
-          <button type="button" data-pair="c"><img src="img/client/c-after.jpg" alt="Пара 5"></button>
+        <div class="hero__media">
+          <div class="arch"><img id="type-img" src="img/client/portrait-short.jpg" alt="Клиентка Only Curly с кудрями"></div>
+          <p class="arch-note" id="type-note">Так выглядят кудри после сухой стрижки DEVACUT</p>
+          <div class="video-card">
+            <video src="video/process-full.mp4" autoplay muted loop playsinline preload="metadata" poster="img/client/spa-wash.jpg"></video>
+            <span>Как проходит визит</span>
+          </div>
+          <figure class="review-card">
+            <b>★★★★★</b>
+            <blockquote>«Помыла голову — всё лежит отлично. Приходите, кудряшки, не пожалеете»</blockquote>
+            <figcaption>Ольга, отзыв в Dikidi · 5,0 из 99 оценок</figcaption>
+          </figure>
         </div>
       </div>
+      <img class="seal" src="img/client/logo.png" alt="" aria-hidden="true">
     </section>
   </main>
 
