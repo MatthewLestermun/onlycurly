@@ -94,3 +94,10 @@ function renderResult() {
 
 function start() { step = 0; score = {}; renderStep(); openModal(); }
 document.querySelectorAll('[data-quiz]').forEach((b) => b.addEventListener('click', start));
+
+// ---------- Переключатель палитр (для выбора цвета) ----------
+document.querySelectorAll('.palette button').forEach((b) => b.addEventListener('click', () => {
+  if (b.dataset.theme) document.documentElement.dataset.theme = b.dataset.theme;
+  else delete document.documentElement.dataset.theme;
+  document.querySelectorAll('.palette button').forEach((x) => x.classList.toggle('active', x === b));
+}));

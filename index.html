@@ -9,7 +9,7 @@
   <link rel="icon" href="img/client/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Manrope:wght@400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -77,6 +77,15 @@
       <div class="quiz__bar"><i id="quiz-bar"></i></div>
       <div id="quiz-body"></div>
     </div>
+  </div>
+
+  <!-- Переключатель палитр: только для выбора, на готовом сайте уберём -->
+  <div class="palette" aria-label="Палитра">
+    <span>Цвета:</span>
+    <button type="button" data-theme="" class="sw-powder active" title="Пудра"></button>
+    <button type="button" data-theme="milk" class="sw-milk" title="Молоко и терракота"></button>
+    <button type="button" data-theme="sage" class="sw-sage" title="Шалфей"></button>
+    <button type="button" data-theme="graphite" class="sw-graphite" title="Графит и медь"></button>
   </div>
 
   <script src="main.js"></script>
