@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Only Curly - студия для кудрявых волос во Владивостоке</title>
+  <meta name="description" content="Only Curly - студия для кудрявых и вьющихся волос во Владивостоке. Сухая стрижка DEVACUT, СПА-ритуалы, клуб «Банда кудрявых» и спа-коворкинг «Логово».">
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="wrap header-in">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="Логотип Only Curly" width="44" height="44">
+        <span>Only Curly</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#services">Стрижки и уход</a>
+        <a href="#club">Банда кудрявых</a>
+        <a href="#venera">Венера</a>
+        <a href="#logovo">Логово</a>
+      </nav>
+      <a class="btn btn-dark btn-sm" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Записаться</a>
+      <button class="burger" id="burger" type="button" aria-label="Меню"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Первый экран -->
+    <section class="hero wrap">
+      <div class="hero-text">
+        <p class="eyebrow">Студия для кудрявых волос · Владивосток</p>
+        <h1>Кудри, которые хочется носить распущенными</h1>
+        <p class="lead">Сухая стрижка по технике DEVACUT, СПА-ритуалы и обучение домашнему уходу. Без пуха, сухости и выпрямления.</p>
+        <div class="hero-btns">
+          <a class="btn btn-dark" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Записаться онлайн</a>
+          <a class="btn btn-line" href="#before-after">Смотреть до и после</a>
+        </div>
+        <ul class="facts">
+          <li><b>5,0</b><span>99 оценок в Dikidi</span></li>
+          <li><b>от 7 900 ₽</b><span>первый визит с обучением</span></li>
+          <li><b>1 626</b><span>человек в клубе</span></li>
+        </ul>
+      </div>
+      <figure class="hero-photo">
+        <img src="img/hero.jpg" alt="Клиентка Only Curly после сухой стрижки" width="900" height="1200" fetchpriority="high">
+        <figcaption>После сухой стрижки DEVACUT</figcaption>
+      </figure>
+    </section>
+
+    <!-- Четыре направления -->
+    <section class="worlds wrap" id="services">
+      <a class="world" href="#services">
+        <span class="world-top"><span class="world-num">Студия</span><i>→</i></span>
+        <h2>Стрижки и уход</h2>
+        <p>Сухая стрижка DEVACUT, СПА-ритуалы, окрашивание, косметика без силиконов и сульфатов.</p>
+      </a>
+      <a class="world" href="#club">
+        <span class="world-top"><span class="world-num">Клуб</span><i>→</i></span>
+        <h2>Банда кудрявых</h2>
+        <p>Встречи, трансформационные игры и афиши для кудрявых Приморья и Хабаровска.</p>
+      </a>
+      <a class="world" href="#venera">
+        <span class="world-top"><span class="world-num">Личный бренд</span><i>→</i></span>
+        <h2>Венера</h2>
+        <p>Коучинг, арт-продукты и телесно-ориентированная терапия от основателя студии.</p>
+      </a>
+      <a class="world" href="#logovo">
+        <span class="world-top"><span class="world-num">Спа-коворкинг</span><i>→</i></span>
+        <h2>Логово</h2>
+        <p>Почасовая аренда кабинета для бьюти-специалистов в атмосфере студии.</p>
+      </a>
+    </section>
+
+    <!-- До и после -->
+    <section class="ba wrap" id="before-after">
+      <div class="ba-text">
+        <p class="eyebrow">Результат одного визита</p>
+        <h2>До и после</h2>
+        <p class="lead">Потяните ползунок. Слева - волосы перед визитом, справа - после стрижки DEVACUT и СПА-ухода. Без утюжков и химии, только правильная стрижка и уход.</p>
+        <a class="btn btn-dark" href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Хочу так же</a>
+      </div>
+      <div class="ba-box" id="ba">
+        <img src="img/after.jpg" alt="После визита в Only Curly" width="800" height="1422" loading="lazy">
+        <div class="ba-before" id="ba-before">
+          <img src="img/before.jpg" alt="До визита в Only Curly" width="800" height="1422" loading="lazy">
+        </div>
+        <span class="ba-tag ba-tag-l">До</span>
+        <span class="ba-tag ba-tag-r">После</span>
+        <div class="ba-handle" id="ba-handle"><span>‹ ›</span></div>
+        <input class="ba-range" id="ba-range" type="range" min="0" max="100" value="50" aria-label="Сравнить до и после">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <span>Only Curly · Владивосток, Пихтовая, 26г</span>
+    <a href="https://dikidi.app/onlycurly" target="_blank" rel="noopener">Онлайн-запись в Dikidi →</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

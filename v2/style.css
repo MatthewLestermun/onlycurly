@@ -1,0 +1,197 @@
+/* Only Curly: нюдовый фон, чёрный как логотип, один шрифт Manrope, ровная сетка */
+:root {
+  --bg: #F1EDE6;
+  --card: #FBF9F5;
+  --ink: #1F1A18;
+  --muted: #6F635B;
+  --line: #DDD3C8;
+  --font: 'Manrope', system-ui, sans-serif;
+  --radius: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+
+/* ---------- Кнопки ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 15px 26px; border-radius: 999px;
+  font-weight: 700; font-size: 15px;
+  border: 1.5px solid var(--ink);
+  transition: background .2s, color .2s, transform .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-dark { background: var(--ink); color: var(--bg); }
+.btn-dark:hover { background: #3a322e; }
+.btn-line { background: transparent; color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--bg); }
+.btn-sm { padding: 10px 18px; font-size: 14px; }
+
+/* ---------- Шапка ---------- */
+.header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(241, 237, 230, .92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-in { display: flex; align-items: center; gap: 24px; height: 72px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; letter-spacing: -.01em; }
+.logo img { width: 44px; height: 44px; }
+.nav { display: flex; gap: 28px; margin-left: auto; font-size: 15px; font-weight: 500; }
+.nav a { color: var(--muted); transition: color .2s; }
+.nav a:hover { color: var(--ink); }
+.burger { display: none; }
+
+/* ---------- Первый экран ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  padding-top: clamp(40px, 6vw, 80px);
+  padding-bottom: clamp(40px, 6vw, 80px);
+}
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 {
+  font-weight: 800;
+  font-size: clamp(38px, 5.4vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -.04em;
+  margin: 16px 0 22px;
+  text-wrap: balance;
+}
+.lead { color: var(--muted); font-size: 18px; max-width: 520px; }
+.hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 40px; }
+
+.facts { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.facts li { padding: 18px 16px 0 0; display: grid; gap: 2px; }
+.facts li + li { padding-left: 16px; border-left: 1px solid var(--line); }
+.facts b { font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+.facts span { font-size: 13px; color: var(--muted); line-height: 1.35; }
+
+.hero-photo { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 5; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.hero-photo figcaption {
+  position: absolute; left: 16px; bottom: 16px;
+  background: var(--card); color: var(--ink);
+  padding: 8px 14px; border-radius: 999px;
+  font-size: 13px; font-weight: 700;
+}
+
+/* ---------- Четыре направления ---------- */
+.worlds { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding-bottom: clamp(56px, 8vw, 100px); }
+.world {
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 24px; border-radius: var(--radius);
+  background: var(--card); border: 1px solid var(--line);
+  transition: background .25s, color .25s, transform .25s;
+}
+.world-top { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.world-top i { font-style: normal; font-size: 18px; color: var(--ink); transition: transform .25s; }
+.world h2 { font-size: 22px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; margin-top: 18px; }
+.world p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+.world:hover { background: var(--ink); color: var(--bg); transform: translateY(-4px); }
+.world:hover .world-top, .world:hover p { color: rgba(241, 237, 230, .7); }
+.world:hover .world-top i { color: var(--bg); transform: translateX(4px); }
+
+/* ---------- До и после ---------- */
+.ba {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center;
+  padding-bottom: clamp(56px, 8vw, 100px);
+}
+.ba h2 { font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; letter-spacing: -.04em; line-height: 1.02; margin: 14px 0 18px; }
+.ba .lead { margin-bottom: 28px; }
+
+.ba-box {
+  --pos: 50%;
+  position: relative; border-radius: var(--radius); overflow: hidden;
+  aspect-ratio: 4 / 5; max-width: 520px; width: 100%; justify-self: end;
+  user-select: none; touch-action: pan-y;
+}
+.ba-box img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+.ba-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.ba-tag {
+  position: absolute; top: 16px; z-index: 2;
+  background: var(--card); padding: 6px 12px; border-radius: 999px;
+  font-size: 13px; font-weight: 700;
+}
+.ba-tag-l { left: 16px; }
+.ba-tag-r { right: 16px; background: var(--ink); color: var(--bg); }
+.ba-handle {
+  position: absolute; top: 0; bottom: 0; left: var(--pos); z-index: 2;
+  width: 2px; background: var(--card); transform: translateX(-1px); pointer-events: none;
+}
+.ba-handle span {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--card); color: var(--ink);
+  display: grid; place-items: center; font-weight: 800; font-size: 16px;
+  box-shadow: 0 6px 20px rgba(31, 26, 24, .25);
+}
+.ba-range {
+  position: absolute; inset: 0; z-index: 3; width: 100%; height: 100%;
+  opacity: 0; cursor: ew-resize; margin: 0;
+}
+.ba-range:focus-visible + .ba-handle span, .ba-box:focus-within .ba-handle span { outline: 2px solid var(--ink); }
+
+/* ---------- Подвал ---------- */
+.footer {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  padding-top: 24px; padding-bottom: 32px;
+  border-top: 1px solid var(--line); font-size: 14px; color: var(--muted);
+}
+.footer a { color: var(--ink); font-weight: 700; }
+
+/* ---------- Планшет ---------- */
+@media (max-width: 960px) {
+  .worlds { grid-template-columns: repeat(2, 1fr); }
+  .nav { gap: 18px; font-size: 14px; }
+}
+
+/* ---------- Телефон ---------- */
+@media (max-width: 760px) {
+  .header-in { height: 64px; gap: 12px; }
+  .header-in > .btn { margin-left: auto; }
+  .nav {
+    position: absolute; top: 64px; left: 0; right: 0;
+    flex-direction: column; gap: 0; margin: 0;
+    background: var(--bg); border-bottom: 1px solid var(--line);
+    display: none;
+  }
+  .nav.open { display: flex; }
+  .nav a { padding: 16px clamp(16px, 4vw, 40px); border-top: 1px solid var(--line); color: var(--ink); font-size: 16px; }
+  .burger {
+    display: grid; gap: 5px; place-content: center;
+    width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%;
+    background: var(--card); cursor: pointer;
+  }
+  .burger span { width: 16px; height: 1.5px; background: var(--ink); }
+
+  .hero { grid-template-columns: 1fr; padding-top: 28px; }
+  .hero-photo { order: -1; aspect-ratio: 4 / 4.2; }
+  .lead { font-size: 16px; }
+  .hero-btns .btn { flex: 1 1 100%; }
+  .facts b { font-size: 18px; }
+  .facts span { font-size: 12px; }
+  .facts li + li { padding-left: 10px; }
+
+  .worlds { grid-template-columns: 1fr; }
+  .world h2 { margin-top: 8px; }
+
+  .ba { grid-template-columns: 1fr; }
+  .ba-box { justify-self: stretch; max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
